@@ -12,7 +12,7 @@ function Footer() {
       >
         <div className="flex flex-col gap-2">
           <Typography variant="body2" color={"text.secondary"}>
-            © 2024 All rights reserved.
+            © 2025 All rights reserved.
           </Typography>
 
           <Typography
