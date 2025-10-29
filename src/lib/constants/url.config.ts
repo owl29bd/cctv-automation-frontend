@@ -46,5 +46,12 @@ export const RouteUrls = {
     dashboard: {
       index: "/administrator/dashboard",
     },
+    cameras: {
+      index: "/administrator/cameras",
+      all: "/administrator/cameras/all",
+      offline: "/administrator/cameras/offline",
+      maintenance: "/administrator/cameras/maintenance",
+      online: "/administrator/cameras/online",
+    },
   },
 };
