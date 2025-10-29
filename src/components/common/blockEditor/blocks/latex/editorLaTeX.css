@@ -1,0 +1,53 @@
+.math-block-input {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  visibility: hidden;
+  z-index: 10;
+  background: none;
+  width: 100%;
+  padding: 16px;
+  border-radius: 8px;
+  outline: none;
+  background: white;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  transition: transform 0.2s ease;
+}
+
+.math-block-input-active {
+  visibility: visible;
+  transform: translateY(8px);
+}
+
+.inline-math {
+  position: relative;
+  cursor: pointer;
+  background: whitesmoke;
+  padding: 4px;
+  border-radius: 4px;
+  margin: 0 1px;
+  -webkit-user-modify: read-only;
+}
+
+.inline-math:hover {
+  background: #f0f0f0;
+}
+
+.ce-Math {
+  position: relative;
+  color: #000;
+  outline: none;
+  padding: 16px;
+}
+
+.show-click {
+  cursor: pointer;
+  background-color: whitesmoke;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.show-click:hover {
+  background-color: #f0f0f0;
+}
