@@ -2,12 +2,12 @@
 
 import SectionCardLayout from "@/components/common/card/SectionCardLayout";
 
-export default function AdminDashboardPage() {
+export default function ServiceProviderDashboardPage() {
   return (
     <div className="p-6">
-      <SectionCardLayout title="Dashboard" subtitle="Admin">
+      <SectionCardLayout title="Dashboard" subtitle="Service Provider">
         <div className="flex items-center justify-center gap-4">
-          Admin Dashboard...
+          Service Provider Dashboard...
         </div>
       </SectionCardLayout>
     </div>

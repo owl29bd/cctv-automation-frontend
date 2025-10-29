@@ -2,7 +2,6 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
 import { QUERYKEYS } from "@/lib/constants/query-keys";
 import userManagementService from "@/lib/services/userManagement.service";
-import { UserRes } from "@/lib/dtos/user.dto";
 
 export default function useUserManagementAction() {
   const queryClient = useQueryClient();
@@ -23,7 +22,7 @@ export default function useUserManagementAction() {
 
   const useUserQuery = (id: string) =>
     useQuery({
-      queryKey: [QUERYKEYS.groupManagement.getGroup],
+      queryKey: [QUERYKEYS.userManagement.getUser],
       queryFn: () => userManagementService.getById(id),
     });
 
