@@ -1,5 +1,5 @@
 "use client";
-import CamerasTable from "@/components/administrator/tables/CamerasTable";
+import OnlineCamerasTable from "@/components/administrator/tables/OlineCamerasTable";
 import SectionCardLayout from "@/components/common/card/SectionCardLayout";
 import { Button } from "@mui/material";
 import { MdRefresh } from "react-icons/md";
@@ -16,7 +16,7 @@ export default function OnlineCamerasPage() {
           </Button>
         }
       >
-        <CamerasTable />
+        <OnlineCamerasTable />
       </SectionCardLayout>
     </div>
   );

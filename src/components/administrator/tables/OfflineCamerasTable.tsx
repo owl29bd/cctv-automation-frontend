@@ -101,7 +101,7 @@ const columns: MRT_ColumnDef<CameraResponse>[] = [
   },
 ];
 
-export default function CamerasTable() {
+export default function OfflineCamerasTable() {
   const {
     pagination,
     setPagination,
@@ -125,7 +125,7 @@ export default function CamerasTable() {
       name: "Camera 1",
       description: "Camera 1 description",
       location: "Location 1",
-      status: CameraStatus.Online,
+      status: CameraStatus.Offline,
       createdAt: new Date(),
       updatedAt: new Date(),
     },
@@ -143,7 +143,7 @@ export default function CamerasTable() {
       name: "Camera 3",
       description: "Camera 3 description",
       location: "Location 3",
-      status: CameraStatus.Maintenance,
+      status: CameraStatus.Offline,
       createdAt: new Date(),
       updatedAt: new Date(),
     },

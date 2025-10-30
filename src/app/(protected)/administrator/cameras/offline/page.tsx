@@ -1,5 +1,5 @@
 "use client";
-import CamerasTable from "@/components/administrator/tables/CamerasTable";
+import OfflineCamerasTable from "@/components/administrator/tables/OfflineCamerasTable";
 import SectionCardLayout from "@/components/common/card/SectionCardLayout";
 import { Button } from "@mui/material";
 import { MdRefresh } from "react-icons/md";
@@ -16,7 +16,7 @@ export default function OfflineCamerasPage() {
           </Button>
         }
       >
-        <CamerasTable />
+        <OfflineCamerasTable />
       </SectionCardLayout>
     </div>
   );

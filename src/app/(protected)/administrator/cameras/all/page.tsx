@@ -1,5 +1,5 @@
 "use client";
-import CamerasTable from "@/components/administrator/tables/CamerasTable";
+import AllCamerasTable from "@/components/administrator/tables/AllCamerasTable";
 import SectionCardLayout from "@/components/common/card/SectionCardLayout";
 import { Button } from "@mui/material";
 import { MdAdd } from "react-icons/md";
@@ -16,7 +16,7 @@ export default function CamerasPage() {
           </Button>
         }
       >
-        <CamerasTable />
+        <AllCamerasTable />
       </SectionCardLayout>
     </div>
   );
