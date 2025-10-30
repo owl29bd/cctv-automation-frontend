@@ -1,19 +1,18 @@
-import React from "react";
+import { Avatar, Box } from "@mui/material";
 import {
   MaterialReactTable,
   MRT_ActionMenuItem,
   useMaterialReactTable,
   type MRT_ColumnDef,
 } from "material-react-table";
-import { Box, Avatar } from "@mui/material";
 
 // Import the UserRes type
+import useTableQueryParams from "@/hooks/useTableQueryParams";
+import useUserManagementAction from "@/hooks/useUserManagementAction";
 import { type UserRes } from "@/lib/dtos/user.dto";
+import { queryParamBuilder } from "@/lib/utils/queryParamBuilder";
 import { DeleteIcon, EditIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
-import useTableQueryParams from "@/hooks/useTableQueryParams";
-import { queryParamBuilder } from "@/lib/utils/queryParamBuilder";
-import useUserManagementAction from "@/hooks/useUserManagementAction";
 
 // Define columns based on UserRes type
 const columns: MRT_ColumnDef<UserRes>[] = [
@@ -116,7 +115,7 @@ export default function UsersTable() {
     onColumnFilterFnsChange: setColumnFilterFns,
     initialState: {
       columnPinning: { left: ["mrt-row-actions"] },
-      columnVisibility: { id: false },
+      columnVisibility: { id: false, createdAt: false, updatedAt: false, photo: false },
     },
     state: {
       pagination,

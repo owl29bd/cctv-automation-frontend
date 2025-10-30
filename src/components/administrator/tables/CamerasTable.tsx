@@ -1,10 +1,13 @@
 import useTableQueryParams from "@/hooks/useTableQueryParams";
 import { CameraStatus, type CameraResponse } from "@/lib/dtos/camera.dto";
+import { EyeIcon } from "lucide-react";
 import {
   MaterialReactTable,
+  MRT_ActionMenuItem,
   useMaterialReactTable,
   type MRT_ColumnDef,
 } from "material-react-table";
+import { useRouter } from "next/navigation";
 
 // Define columns based on UserRes type
 const columns: MRT_ColumnDef<CameraResponse>[] = [
@@ -114,6 +117,8 @@ export default function CamerasTable() {
     columns,
   });
 
+  const router = useRouter();
+
   const data = [
     {
       id: "1",
@@ -156,14 +161,14 @@ export default function CamerasTable() {
     manualFiltering: true,
     manualSorting: true,
     enableStickyHeader: true,
-    // enableRowActions: true,
+    enableRowActions: true,
     onSortingChange: setSorting,
     onGlobalFilterChange: setSearch,
     onPaginationChange: setPagination,
     onColumnFiltersChange: setColumnFilters,
     onColumnFilterFnsChange: setColumnFilterFns,
     initialState: {
-      // columnPinning: { left: ["mrt-row-actions"] },
+      columnPinning: { left: ["mrt-row-actions"] },
       columnVisibility: { id: false, createdAt: false, updatedAt: false },
     },
     state: {
@@ -175,28 +180,18 @@ export default function CamerasTable() {
       columnFilters,
       columnFilterFns,
     },
-    // renderRowActionMenuItems: ({ table, row, closeMenu }) => [
-    //   <MRT_ActionMenuItem
-    //     key={1}
-    //     icon={<EditIcon />}
-    //     label="Edit"
-    //     table={table}
-    //     onClick={() => {
-    //       router.push("/admin/user-management/edit-user/" + row.original.id);
-    //       closeMenu();
-    //     }}
-    //   />,
-    //   <MRT_ActionMenuItem
-    //     key={1}
-    //     icon={<DeleteIcon />}
-    //     label="Delete"
-    //     table={table}
-    //     onClick={() => {
-    //       console.log("delete button clicked");
-    //       closeMenu();
-    //     }}
-    //   />,
-    // ],
+    renderRowActionMenuItems: ({ table, row, closeMenu }) => [
+      <MRT_ActionMenuItem
+        key={1}
+        icon={<EyeIcon />}
+        label="View"
+        table={table}
+        onClick={() => {
+          router.push("/administrator/cameras/" + row.original.id);
+          closeMenu();
+        }}
+      />,
+    ],
   });
 
   return <MaterialReactTable table={camerasTable} />;
